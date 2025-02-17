@@ -1,6 +1,6 @@
 ﻿namespace PhosCreate.FloatReference
 {
-    public interface IValueListener
+    public interface IValueChangeListener
     {
         void OnValueChange();
     }

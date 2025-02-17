@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea636a27d3a14778847d884568db7014, type: 3}
   m_Name: new float value
   m_EditorClassIdentifier: 
-  baseFloat:
-    _value: 0
-    _saveMode:
-      rid: 8275211859705462842
+  _value: 5.35
+  _saveMode:
+    rid: -2
   references:
     version: 2
     RefIds:
-    - rid: 8275211859705462842
-      type: {class: NoSave, ns: PhosCreate.FloatReference, asm: Assembly-CSharp}
-      data: 
+    - rid: -2
+      type: {class: , ns: , asm: }

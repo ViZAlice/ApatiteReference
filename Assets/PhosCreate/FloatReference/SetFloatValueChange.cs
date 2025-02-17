@@ -4,7 +4,7 @@ using UnityEngine;
 namespace PhosCreate.FloatReference
 {
     [AddComponentMenu("FloatReference/Set Float Value")]
-    public class SetFloatValue : MonoBehaviour, IValueListener
+    public class SetFloatValueChange : MonoBehaviour, IValueChangeListener
     {
         [SerializeField] public FloatValueSlot from;
         [SerializeField] public FloatValueSlot to;
@@ -19,7 +19,7 @@ namespace PhosCreate.FloatReference
             from.RemoveListener(this);
         }
 
-        void IValueListener.OnValueChange()
+        void IValueChangeListener.OnValueChange()
         {
             to.Value = from.Value;
         }

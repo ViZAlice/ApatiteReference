@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 namespace PhosCreate.FloatReference
 {
-    [CreateAssetMenu(fileName = "new float value", menuName = "FloatReference/SO FloatValue", order = 0)]
-    public class SOFloatValue : ScriptableObject, IValueChangeRaiser
+    [Serializable]
+    public class LocalFloatValue: IValueChangeRaiser
     {
-        [ShowInInspector]
         public float Value
         {
             get => _value;
@@ -26,7 +25,7 @@ namespace PhosCreate.FloatReference
             }
         }
 
-        [SerializeField, HideInInspector] private float _value;
+        [SerializeField] private float _value;
 
         public List<IValueChangeListener> ValueListeners = new();
         [SerializeReference] private SaveMode _saveMode;

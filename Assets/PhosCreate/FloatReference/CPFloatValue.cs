@@ -4,7 +4,7 @@ using UnityEngine;
 namespace PhosCreate.FloatReference
 {
     [AddComponentMenu("FloatReference/CP FloatValue")]
-    public class CPFloatValue : MonoBehaviour
+    public class CPFloatValue : MonoBehaviour, IValueChangeRaiser
     {
         public float Value
         {
@@ -17,7 +17,7 @@ namespace PhosCreate.FloatReference
                 }
 
                 _value = value;
-                foreach (IValueListener listener in ValueListeners)
+                foreach (IValueChangeListener listener in ValueListeners)
                 {
                     listener.OnValueChange();
                 }
@@ -26,17 +26,17 @@ namespace PhosCreate.FloatReference
 
         [SerializeField] private float _value;
 
-        public List<IValueListener> ValueListeners = new();
+        public List<IValueChangeListener> ValueListeners = new();
         [SerializeReference] private SaveMode _saveMode;
 
-        public void AddListener(IValueListener listener)
+        public void AddListener(IValueChangeListener changeListener)
         {
-            ValueListeners.Add(listener);
+            ValueListeners.Add(changeListener);
         }
 
-        public void RemoveListener(IValueListener listener)
+        public void RemoveListener(IValueChangeListener changeListener)
         {
-            ValueListeners.Remove(listener);
+            ValueListeners.Remove(changeListener);
         }
     }
 }
