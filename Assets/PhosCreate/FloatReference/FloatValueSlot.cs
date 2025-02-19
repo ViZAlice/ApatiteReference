@@ -18,8 +18,6 @@ namespace PhosCreate.FloatReference
             set => slotType.Value = value;
         }
 
-        // public SOFloatValue _value;
-
         public void AddListener(IValueChangeListener changeListener) => slotType.LocalValueChangeRaiser.AddListener(changeListener);
         public void RemoveListener(IValueChangeListener changeListener) => slotType.LocalValueChangeRaiser.RemoveListener(changeListener);
 

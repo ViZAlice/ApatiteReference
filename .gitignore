@@ -73,13 +73,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+/.idea/
+/Assets/Plugins/
+/Assets/Plugins.meta
+/Assets/Obvious/
+/Assets/Obvious.meta
 
-# 限定需要上传的文件夹
-# 根目录下的所有文件夹,除了Assets
-/*
-!/Assets/
-# Assets下的所有文件夹,除了PhosCreate
-/Assets/*
-!/Assets/PhosCreate/
-!/Assets/PhosCreate.meta
-!/.gitignore
+/Packages/
+
